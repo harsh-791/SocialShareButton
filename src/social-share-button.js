@@ -43,8 +43,10 @@ class SocialShareButton {
     this.customColorMouseEnterHandler = null;
     this.customColorMouseLeaveHandler = null;
     this._listeners = []; // Central registry for all event listeners
+
     this._openTimeout = null;  // Track setTimeout for openModal animation
     this._closeTimeout = null; // Track setTimeout for closeModal animation
+
 
     if (this.options.container) {
       this.init();
