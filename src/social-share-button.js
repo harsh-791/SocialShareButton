@@ -258,13 +258,13 @@ class SocialShareButton {
     input.addEventListener("click", (e) => e.target.select());
 
     // ESC key to close
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && this.isModalOpen) {
-        this.closeModal();
-      }
-    });
+    this.handleKeydown = (e) => {
+  if (e.key === 'Escape' && this.isModalOpen) {
+    this.closeModal();
   }
-
+};
+document.addEventListener('keydown', this.handleKeydown);
+  }
   openModal() {
     this.isModalOpen = true;
     this.modal.style.display = "flex";
@@ -365,6 +365,10 @@ class SocialShareButton {
   }
 
   destroy() {
+    if (this.handleKeydown) {
+  document.removeEventListener('keydown', this.handleKeydown);
+  this.handleKeydown = null;
+}
     if (this.button && this.customColorMouseEnterHandler) {
       this.button.removeEventListener(
         "mouseenter",
