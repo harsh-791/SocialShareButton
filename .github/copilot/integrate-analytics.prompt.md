@@ -287,12 +287,18 @@ new SocialShareButton({
   via your consent management platform (CMP):
 
 ```js
-// Example: activate only after CMP consent
-consentManager.onConsent("analytics", () => {
-  shareButtonInstance.updateOptions({
-    analyticsPlugins: [new GoogleAnalyticsAdapter()],
-  });
-});
++const shareButtonInstance = new SocialShareButton({
++  container: "#share-button",
++  analytics: false,
++});
++
++// Activate only after CMP consent
+ consentManager.onConsent("analytics", () => {
+   shareButtonInstance.updateOptions({
++    analytics: true,
+     analyticsPlugins: [new GoogleAnalyticsAdapter()],
+   });
+ });
 ```
 
 ---
@@ -300,14 +306,15 @@ consentManager.onConsent("analytics", () => {
 ## 9 — Event naming alignment (GA4)
 
 All events follow `social_<object>_<action>`, which matches GA4's recommended
-naming convention for custom events. Mapping to other platforms:
+naming convention for custom events. The built-in Mixpanel and Segment
+adapters forward the same event names unchanged:
 
-| Library event            | GA4 event name           | Mixpanel / Segment     |
-| ------------------------ | ------------------------ | ---------------------- |
-| `social_share_click`     | `social_share_click`     | `Social Share Click`   |
-| `social_share_success`   | `social_share_success`   | `Social Share Success` |
-| `social_share_copy`      | `social_share_copy`      | `Social Share Copy`    |
-| `social_share_popup_open`| `social_share_popup_open`| `Social Share Popup Open` |
+| Library event             | GA4 event name            | Mixpanel / Segment built-in adapters |
+| ------------------------- | ------------------------- | ------------------------------------ |
+| `social_share_click`      | `social_share_click`      | `social_share_click`                 |
+| `social_share_success`    | `social_share_success`    | `social_share_success`               |
+| `social_share_copy`       | `social_share_copy`       | `social_share_copy`                  |
+| `social_share_popup_open` | `social_share_popup_open` | `social_share_popup_open`            |
 
 ---
 

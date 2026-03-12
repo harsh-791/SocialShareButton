@@ -21,7 +21,7 @@ Your audience is already sharing. Give them a button worth clicking.
 
 You have exactly **three steps** between you and a live share button.
 
-```
+```text
 1.  Load the library   →   one line in your HTML or package install
 2.  Drop a div         →   place it wherever you want the button
 3.  Initialize         →   one line of JavaScript
@@ -30,8 +30,8 @@ You have exactly **three steps** between you and a live share button.
 That's it. No accounts. No API keys. No configuration files.
 
 > **Using GitHub Copilot?**
-> Open the chat, type `@workspace` and copy the prompt:
-> `.github/copilot/integrate-social-share-button.prompt.md`
+> Open the chat, type `@workspace`, then copy the public prompt from:
+> https://github.com/AOSSIE-Org/SocialShareButton/blob/main/.github/copilot/integrate-social-share-button.prompt.md
 > Copilot will walk through each step for your exact framework automatically.
 
 ---
@@ -43,13 +43,16 @@ analytics tool you already use (Google Analytics, Mixpanel, Plausible, or your o
 **Zero extra vendors. Zero new data contracts.**
 
 You see:
+
 - Which platform users share to
 - When the popup opens and closes
 - Copy-link vs. direct share split
 - Any errors, so nothing goes silently wrong
 
 > **Using GitHub Copilot?**
-> Attach `.github/copilot/integrate-analytics.prompt.md` and Copilot will wire
+> Open and copy the analytics prompt from:
+> https://github.com/AOSSIE-Org/SocialShareButton/blob/main/.github/copilot/integrate-analytics.prompt.md
+> Copilot will wire
 > up the events to your analytics stack in minutes.
 
 ---
